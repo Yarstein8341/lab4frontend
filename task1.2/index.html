@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Форма</title>
+    <style>
+        .button {
+            margin-right: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function createForm() {
+
+            const form = document.createElement('form');
+
+
+            const loginRow = document.createElement('div');
+            const loginLabel = document.createElement('label');
+            loginLabel.textContent = 'Логін:';
+            const loginInput = document.createElement('input');
+            loginInput.type = 'text';
+            loginInput.name = 'login';
+            loginRow.appendChild(loginLabel);
+            loginRow.appendChild(loginInput);
+
+
+            const dividerRow1 = document.createElement('div');
+            dividerRow1.innerHTML = '&nbsp;';
+
+
+            const passwordRow = document.createElement('div');
+            const passwordLabel = document.createElement('label');
+            passwordLabel.textContent = 'Пароль:';
+            const passwordInput = document.createElement('input');
+            passwordInput.type = 'password';
+            passwordInput.name = 'password';
+            passwordRow.appendChild(passwordLabel);
+            passwordRow.appendChild(passwordInput);
+
+
+            const dividerRow2 = document.createElement('div');
+            dividerRow2.innerHTML = '&nbsp;';
+
+
+            const confirmPasswordRow = document.createElement('div');
+            const confirmPasswordLabel = document.createElement('label');
+            confirmPasswordLabel.textContent = 'Повторіть пароль:';
+            const confirmPasswordInput = document.createElement('input');
+            confirmPasswordInput.type = 'password';
+            confirmPasswordInput.name = 'confirmPassword';
+            confirmPasswordRow.appendChild(confirmPasswordLabel);
+            confirmPasswordRow.appendChild(confirmPasswordInput);
+
+
+            const dividerRow3 = document.createElement('div');
+            dividerRow3.innerHTML = '&nbsp;';
+
+
+            const genderRow = document.createElement('div');
+            const genderLabel = document.createElement('label');
+            genderLabel.textContent = 'Стать:';
+            const maleRadio = document.createElement('input');
+            maleRadio.type = 'radio';
+            maleRadio.name = 'gender';
+            maleRadio.value = 'male';
+            maleLabel = document.createElement('label');
+            maleLabel.textContent = 'Чоловік';
+            maleLabel.htmlFor = 'male';
+            const femaleRadio = document.createElement('input');
+            femaleRadio.type = 'radio';
+            femaleRadio.name = 'gender';
+            femaleRadio.value = 'female';
+            femaleLabel = document.createElement('label');
+            femaleLabel.textContent = 'Жінка';
+            femaleLabel.htmlFor = 'female';
+            genderRow.appendChild(genderLabel);
+            genderRow.appendChild(maleRadio);
+            genderRow.appendChild(maleLabel);
+            genderRow.appendChild(femaleRadio);
+            genderRow.appendChild(femaleLabel);
+
+
+            const dividerRow4 = document.createElement('div');
+            dividerRow4.innerHTML = '&nbsp;';
+
+
+            const cityRow = document.createElement('div');
+            const cityLabel = document.createElement('label');
+            cityLabel.textContent = 'Вкажіть місто:';
+            const citySelect = document.createElement('select');
+            citySelect.name = 'city';
+            const cities = ['Житомир', 'Київ', 'Львів'];
+            for (const city of cities) {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            }
+            cityRow.appendChild(cityLabel);
+            cityRow.appendChild(citySelect);
+
+
+            const dividerRow5 = document.createElement('div');
+            dividerRow5.innerHTML = '&nbsp;';
+
+
+            const interestsRow = document.createElement('div');
+            const interestsLabel = document.createElement('label');
+            interestsLabel.textContent = 'Інтереси:';
+            interestsRow.appendChild(interestsLabel);
+            const interests = ['Футбол', 'Шахи', 'Малювання', 'Музика'];
+            for (const interest of interests) {
+                const interestCheckbox = document.createElement('input');
+                interestCheckbox.type = 'checkbox';
+                interestCheckbox.name = 'interests';
+                interestCheckbox.value = interest;
+                const interestLabel = document.createElement('label');
+                interestLabel.textContent = interest;
+                interestsRow.appendChild(interestCheckbox);
+                interestsRow.appendChild(interestLabel);
+            }
+
+
+            const dividerRow6 = document.createElement('div');
+            dividerRow6.innerHTML = '&nbsp;';
+
+
+            const buttonsRow = document.createElement('div');
+            const clearButton = document.createElement('button');
+            clearButton.type = 'reset';
+            clearButton.textContent = 'Очистити';
+            clearButton.classList.add('button');
+            const submitButton = document.createElement('button');
+            submitButton.type = 'submit';
+            submitButton.textContent = 'Відправити';
+            buttonsRow.appendChild(clearButton);
+            buttonsRow.appendChild(submitButton);
+
+
+            form.appendChild(loginRow);
+            form.appendChild(dividerRow1);
+            form.appendChild(passwordRow);
+            form.appendChild(dividerRow2);
+            form.appendChild(confirmPasswordRow);
+            form.appendChild(dividerRow3);
+            form.appendChild(genderRow);
+            form.appendChild(dividerRow4);
+            form.appendChild(cityRow);
+            form.appendChild(dividerRow5);
+            form.appendChild(interestsRow);
+            form.appendChild(dividerRow6);
+            form.appendChild(buttonsRow);
+
+
+            document.body.appendChild(form);
+        }
+
+
+        createForm();
+    </script>
+</body>
+
+</html>
